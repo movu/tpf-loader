@@ -1,0 +1,21 @@
+{
+  "name": "movu.ch-tpf-loader",
+  "description": "Movu widget loader",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "grunt build",
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-cli": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-jasmine": "^0.9.1",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-uglify": "*"
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+    "swig": "^1.4.2"
+  }
+}
