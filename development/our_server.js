@@ -8,8 +8,11 @@ app.get('/', function (req, res) {
   res.send('Hello World!');
 });
 app.use('/js',express.static('static'));
-app.get('/swisscom',function(req,res){
-  res.send(swig.compileFile('index.html')());
+app.get('/autoinit',function(req,res){
+  res.send(swig.compileFile('autoinit.html')());
+});
+app.get('/jsinit',function(req,res){
+  res.send(swig.compileFile('jsinit.html')());
 });
 app.get('/:lang/api/widget/:customerId',function(req,res){
   var tpl = swig.compileFile('widget.html');

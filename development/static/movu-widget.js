@@ -49,7 +49,7 @@ proto.getApiUrl = function(){
     '/' + 
     this._params.language + 
     '/api/widget/' + 
-    this._params.customerId + 
+    this.getCustomerId() + 
     (q === '?' ? '' : q);
 
 };
@@ -130,15 +130,23 @@ proto.params = function(){
     }
   };
 };
-
+proto.getCustomerId = function(){
+  if(this.el){
+    var cId = this.el.getAttribute('data-customer-id');
+    if(cId){
+      return cId;      
+    }
+  }
+  return this._params.customerId;
+};
 proto.init = function(){
   var loaderSelf = this;
-  
-  if(this._params.customerId === undefined || this._params.customerId === null){
+  var customerId = this.getCustomerId();
+  if(customerId === undefined || customerId === null){
     throw this._errors.CustomerIdNotProvided;
   }
 
-  this.el = document.getElementById(this._settings.holderId);
+  this.el = this.el || document.getElementById(this._settings.holderId);
   if(this.el === undefined || this.el === null){
     throw this._errors.NotFoundHolderId;
   }
@@ -157,4 +165,23 @@ proto.init = function(){
     }
   });
 };
+
+proto.tryToAutoInit = function(){
+
+  var el = document.getElementById(this._settings.holderId);
+  if(el){
+    var autoinit = el.getAttribute('data-autoinit');
+    if(autoinit && autoinit.toLowerCase() === 'true'){
+      this.el = el;
+      this.init();
+    }
+  }
+};
+
+
 var MovuWidget = new MovuWidgetObj();
+document.addEventListener('DOMContentLoaded',function(){
+  MovuWidget.tryToAutoInit();
+});
+
+
