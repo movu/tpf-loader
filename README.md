@@ -19,9 +19,20 @@ if build is success files for production are in ROOT\dest
 You can edit widget file and testit on localhost:3002/autoinit
 
 ## Options
-  data-autoinit="true" 
-  data-customer-id="customer id"
+    data-autoinit="true" 
+    data-customer-id="customer id"
+    
+## Example
 
+    <html>
+      <head>
+        <script type="text/javascript" src="/js/movu-widget.js"></script>
+      </head>
+      <body>
+        <!-- autoload init -->
+        <div id="movu-embedded-widget-holder" data-autoinit="true" data-customer-id="adasaddasd"></div>
+      </body>
+    </html>
 
     
 
