@@ -16,6 +16,12 @@ if build is success files for production are in ROOT\dest
 ## run development server
     $ cd development
     $ node our_server.js
-You can edit widget file and testit on localhost:3002/swisscom
+You can edit widget file and testit on localhost:3002/autoinit
+
+## Options
+  data-autoinit="true" 
+  data-customer-id="customer id"
+
+
     
 
