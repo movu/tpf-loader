@@ -48,6 +48,7 @@ MovuWidget.params().set('customerId','3eb6f46b-76b8-4049-a380-7fd5d63ffa7d');
 //Language - default de
 MovuWidget.params().set('language','en');
 
+//Folowing params are to prefill fields on widget
 MovuWidget.params().set('is_moving_request',true);
 MovuWidget.params().set('is_cleaning_request',true);
 MovuWidget.params().set('client_street_and_number','Zuric strase 21');
@@ -60,6 +61,8 @@ MovuWidget.params().set('client_first_name','Sara');
 MovuWidget.params().set('client_last_name','Froyd');
 MovuWidget.params().set('client_email','sara@movu.ch');
 MovuWidget.params().set('client_mobile','0791111111');
+
+//At the end you have to init widget
 MovuWidget.init();
 ```
 
