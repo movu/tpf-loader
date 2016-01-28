@@ -2,7 +2,7 @@
 
 [![Build Status](https://semaphoreci.com/api/v1/projects/e78ee014-a96b-4949-a876-ba87842d1daa/676959/badge.svg)](https://semaphoreci.com/nenad/tpf-loader)
 
-Movu JS library for loading Movu form widget on third party web-sites.
+TPF-loader (Third-Party Form loader) is JavaScript library for loading MOVU inquiry form widget on third party web-sites.
 
 
 # Development
