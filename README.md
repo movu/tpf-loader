@@ -27,7 +27,7 @@ You can edit widget file and testit on localhost:3002/autoinit
 
     <html>
       <head>
-        <script type="text/javascript" src="/js/movu-widget.js"></script>
+        <script type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/movu-production-s3/static/js/tpf-loader.min.js"></script>
       </head>
       <body>
         <!-- autoload init -->
@@ -36,5 +36,44 @@ You can edit widget file and testit on localhost:3002/autoinit
     </html>
 
 ### Init from js
+
+    <html>
+      <head>
+        <script type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/movu-production-s3/static/js/tpf-loader.min.js"></script>
+        
+      </head>
+    <body>
+      <!-- autoload init -->
+      <div id="movu-embedded-widget-holder" data-autoinit="false" ></div>
+
+      <script type="text/javascript">
+
+      MovuWidget.settings().set('width','350px');
+      MovuWidget.settings().set('server','staging2.movu.ch');
+      MovuWidget.settings().set('protocol','https');
+
+      MovuWidget.params().set('customerId','3eb6f46b-76b8-4049-a380-7fd5d63ffa7d');
+      MovuWidget.params().set('language','de');
+
+      MovuWidget.params().set('is_moving_request',true);
+      MovuWidget.params().set('is_cleaning_request',true);
+      MovuWidget.params().set('client_street_and_number','Zuric strase 21');
+      MovuWidget.params().set('client_postal_code','8006');
+      MovuWidget.params().set('moving_street_and_number','Morgen strase 48');
+      MovuWidget.params().set('moving_postal_code','8006');
+      MovuWidget.params().set('moving_date','2016-03-10');
+      MovuWidget.params().set('cleaning_date','2016-03-12');
+      MovuWidget.params().set('client_first_name','Sara');
+      MovuWidget.params().set('client_last_name','Froyd');
+      MovuWidget.params().set('client_email','sara@movu.ch');
+      MovuWidget.params().set('client_mobile','0791111111');
+      MovuWidget.init();
+
+
+      MovuWidget.init();
+      </script>
+      
+    </body>
+    </html>
     
 
