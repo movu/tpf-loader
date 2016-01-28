@@ -1,12 +1,11 @@
 (function(window, document) {
   var MovuWidgetObj = function(){
     this._settings = {
-      width:'500px',
-      height:'500px',
+      width:'100%',
+      height:'100%',
       server:'movu.ch',
       protocol:'http',
       holderId: 'movu-embedded-widget-holder',
-      background:"#4283BD"
 
 
     };
@@ -51,13 +50,13 @@
       this._settings.server + 
       '/' + 
       this._params.language + 
-      '/api/widget/' + 
+      '/api/v1/templates/' + 
       this.getCustomerId() + 
       (q === '?' ? '' : q);
 
   };
 
-  
+
   proto.isIE = function() {
     var myNav = navigator.userAgent.toLowerCase();
     return (myNav.indexOf('msie') !== -1) ? parseInt(myNav.split('msie')[1]) : false;
@@ -84,7 +83,7 @@
           });
         } else {
           if (xmlhttp.status !== 0)
-            cb(null, {
+            cb((('response' in xmlhttp) ? xmlhttp.response : xmlhttp.responseText), {
               status: xmlhttp.status,
               statusText: (msie < 10 ? "" : xmlhttp.statusText),
               response: (('response' in xmlhttp) ? xmlhttp.response : xmlhttp.responseText)
@@ -93,6 +92,12 @@
       }
     };
     xmlhttp.open(options.method, options.url);
+ 
+    if(options.headers){
+      for(var h in options.headers){
+        xmlhttp.setRequestHeader(h,options.headers[h]);
+      }
+    }
     if (options.data !== undefined) {
         xmlhttp.send(JSON.stringify(options.data));
     } else {
@@ -145,6 +150,8 @@
     return this._params.customerId;
   };
   proto.init = function(){
+    this.el = document.getElementById(this._settings.holderId);
+    
     var loaderSelf = this;
     var customerId = this.getCustomerId();
     if(customerId === undefined || customerId === null){
@@ -157,16 +164,17 @@
     }
     this.el.style.width = this._settings.width;
     this.el.style.height = this._settings.height;
-    this.el.style.background = this._settings.background;
 
     this.http({
       method:'GET',
       url:this.getApiUrl()
     },function(err, data){
-      loaderSelf.el.innerHTML = JSON.parse(data.response).body;
+      loaderSelf.el.innerHTML = JSON.parse(data.response).template;
       var codes = loaderSelf.el.getElementsByTagName("script");   
       for(var i=0;i<codes.length;i++){
-         eval(codes[i].text); // jshint ignore:line
+        var script = document.createElement("script");
+        script.innerHTML = codes[i].text;
+        document.head.appendChild(script);
       }
     });
   };

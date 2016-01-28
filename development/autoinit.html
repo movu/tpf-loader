@@ -1,11 +1,75 @@
-<html>
-<head>
-  <script type="text/javascript" src="/js/movu-widget.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <script type="text/javascript" src="/js/movu-widget.js"></script>
   
-</head>
-<body>
-  <!-- autoload init -->
-  <div id="movu-embedded-widget-holder" data-autoinit="true" data-customer-id="adasaddasd"></div>
-  
-</body>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">About</a></li>
+            <li role="presentation"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Project name</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Jumbotron heading</h1>
+        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+      </div>
+      <h1>Hello, world!</h1>
+      <div id="movu-embedded-widget-holder" data-autoinit="false"></div>
+      
+      <footer class="footer">
+        <p>&copy; 2015 Company, Inc.</p>
+      </footer>
+
+    </div>
+    <script type="text/javascript">
+      MovuWidget.settings().set('server','lvh.me:3000');
+      MovuWidget.settings().set('protocol','http');
+
+      MovuWidget.params().set('language','de');
+
+      MovuWidget.params().set('customerId','1ca6d5e1-6c9c-4645-86c0-64fc0a8ad9d3');
+
+
+      MovuWidget.params().set('is_moving_request',true);
+      MovuWidget.params().set('is_cleaning_request',true);
+    //  MovuWidget.params().set('client_street_and_number','Zuric strase 21');
+      MovuWidget.params().set('client_postal_code','8006');
+      MovuWidget.params().set('moving_street_and_number','Morgen strase 48');
+      MovuWidget.params().set('moving_postal_code','8006');
+      MovuWidget.params().set('moving_date','2016-03-10');
+      MovuWidget.params().set('cleaning_date','2016-03-12');
+      MovuWidget.params().set('client_first_name','Sara');
+      MovuWidget.params().set('client_last_name','Kalanj');
+      MovuWidget.params().set('client_email','sara@movu.ch');
+      MovuWidget.params().set('client_mobile','0791111111');
+      MovuWidget.init();
+    </script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  </body>
 </html>

@@ -23,6 +23,7 @@ You can edit widget file and testit on localhost:3002/autoinit
     data-customer-id="customer id"
     
 ## Example
+### Autoinit
 
     <html>
       <head>
@@ -34,5 +35,6 @@ You can edit widget file and testit on localhost:3002/autoinit
       </body>
     </html>
 
+### Init from js
     
 

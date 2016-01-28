@@ -1,20 +1,18 @@
 describe("Url build", function() {
-  beforeEach(function(){
-    MovuWidget = new MovuWidgetObj();
-  });
   it("Def url build", function() {
     //:lang/api/widget/:customerId
-    expect(MovuWidget.getApiUrl().indexOf('http://movu.ch/en/api/widget/undefined')).toBe(0);
+    expect(MovuWidget.getApiUrl().indexOf('http://movu.ch/en/api/v1/templates/undefined')).toBe(0);
   });
   it("Language switch", function() {
     //:lang/api/widget/:customerId
     MovuWidget.params().set('language','de');
-    expect(MovuWidget.getApiUrl().indexOf('http://movu.ch/de/api/widget/undefined')).toBe(0);
+    expect(MovuWidget.getApiUrl().indexOf('http://movu.ch/de/api/v1/templates/undefined')).toBe(0);
   });
   it("partner_id switch", function() {
     //:lang/api/widget/:customerId
     MovuWidget.params().set('customerId','customerId');
-    expect(MovuWidget.getApiUrl().indexOf('http://movu.ch/en/api/widget/customerId')).toBe(0);
+    MovuWidget.params().set('language','en');
+    expect(MovuWidget.getApiUrl().indexOf('http://movu.ch/en/api/v1/templates/customerId')).toBe(0);
   });
   it("other params existens", function() {
     //:lang/api/widget/:customerId

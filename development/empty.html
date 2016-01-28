@@ -1,0 +1,23 @@
+<html>
+<head>
+  <script type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/movu-production-s3/static/js/tpf-loader.min.js"></script>
+  
+</head>
+<body>
+  <!-- autoload init -->
+  <div id="movu-embedded-widget-holder" data-autoinit="false" ></div>
+
+  <script type="text/javascript">
+
+  MovuWidget.settings().set('width','350px');
+  MovuWidget.settings().set('server','staging2.movu.ch');
+  MovuWidget.settings().set('protocol','https');
+  MovuWidget.params().set('customerId','3eb6f46b-76b8-4049-a380-7fd5d63ffa7d');
+  MovuWidget.params().set('language','de');
+
+
+  MovuWidget.init();
+  </script>
+  
+</body>
+</html>
