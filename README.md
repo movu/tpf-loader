@@ -1,6 +1,8 @@
 # tpf-loader
 Movu JS library for loading Movu form widget on third party web-sites.
+[![Build Status](https://semaphoreci.com/api/v1/projects/e78ee014-a96b-4949-a876-ba87842d1daa/676959/badge.svg)](https://semaphoreci.com/nenad/tpf-loader)
 
+# Development
 ## clean install
     $ cd development
     $ npm install
@@ -18,7 +20,12 @@ if build is success files for production are in ROOT\dest
     $ node our_server.js
 You can edit widget file and testit on localhost:3002/autoinit
 
-## Options
+# Integration
+
+## Initialization with data attributes on html element
+### Data attributes
+Folowing attributes
+
     data-autoinit="true" 
     data-customer-id="customer id"
     
