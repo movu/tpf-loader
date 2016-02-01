@@ -3,7 +3,7 @@ describe("Def value tests", function() {
     expect(MovuWidget.settings().get('server')).toBe('movu.ch');
   });
   it("protocol", function() {
-    expect(MovuWidget.settings().get('protocol')).toBe('http');
+    expect(MovuWidget.settings().get('protocol')).toBe('https');
   });
   it("holderId", function() {
     expect(MovuWidget.settings().get('holderId')).toBe('movu-embedded-widget-holder');
