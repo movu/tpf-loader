@@ -4,7 +4,7 @@
       width:'100%',
       height:'100%',
       server:'movu.ch',
-      protocol:'http',
+      protocol:'https',
       holderId: 'movu-embedded-widget-holder',
 
 
