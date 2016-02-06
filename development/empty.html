@@ -1,11 +1,19 @@
 <html>
 <head>
+<!-- 
   <script type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/movu-production-s3/static/js/tpf-loader.min.js"></script>
-  
+-->  
+  <script type="text/javascript" src="/js/movu-widget.js"></script>
 </head>
 <body>
   <!-- autoload init -->
-  <div id="movu-embedded-widget-holder" data-autoinit="true" data-customer-id="156cd3c6-c507-4ba4-8abb-18998f5f882b" ></div>
+  <div id="movu-embedded-widget-holder" data-autoinit="false" ></div>
+  <script type="text/javascript">
+      MovuWidget.params().set('customerId','048346fd-2d4a-409f-b8f9-01326354b56e');
+      MovuWidget.settings().set('server','staging1.movu.ch');
+      MovuWidget.settings().set('protocol','https');
 
+      MovuWidget.init();
+  </script>
 </body>
 </html>

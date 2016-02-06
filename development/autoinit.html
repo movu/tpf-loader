@@ -7,11 +7,12 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Bootstrap 101 Template</title>
 
-    <!-- Bootstrap -->
-    <script type="text/javascript" src="/js/movu-widget.js"></script>
-  
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<!-- 
+  <script type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/movu-production-s3/static/js/tpf-loader.min.js"></script>
+-->  
+  <script type="text/javascript" src="/js/movu-widget.js"></script>    <!-- Bootstrap -->
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -48,15 +49,17 @@
     <script type="text/javascript">
       MovuWidget.settings().set('server','lvh.me:3000');
       MovuWidget.settings().set('protocol','http');
+//      MovuWidget.settings().set('server','staging1.movu.ch');
+  //    MovuWidget.settings().set('protocol','https');
 
-      MovuWidget.params().set('language','de');
+      MovuWidget.params().set('language','en');
 
-      MovuWidget.params().set('customerId','1ca6d5e1-6c9c-4645-86c0-64fc0a8ad9d3');
+      MovuWidget.params().set('customerId','3f00908b-0cd0-4015-94e1-c82b56e921d6');
 
 
       MovuWidget.params().set('is_moving_request',true);
       MovuWidget.params().set('is_cleaning_request',true);
-    //  MovuWidget.params().set('client_street_and_number','Zuric strase 21');
+      MovuWidget.params().set('client_street_and_number','Zuric strase 21');
       MovuWidget.params().set('client_postal_code','8006');
       MovuWidget.params().set('moving_street_and_number','Morgen strase 48');
       MovuWidget.params().set('moving_postal_code','8006');
@@ -68,8 +71,8 @@
       MovuWidget.params().set('client_mobile','0791111111');
       MovuWidget.init();
     </script>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins)
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
   </body>
 </html>

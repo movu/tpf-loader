@@ -50,7 +50,7 @@
       this._settings.server + 
       '/' + 
       this._params.language + 
-      '/tpf_widgets/' + 
+      '/api/v1/templates/' + 
       this.getCustomerId() + 
       (q === '?' ? '' : q);
 
@@ -151,8 +151,7 @@
   };
   proto.init = function(){
     this.el = document.getElementById(this._settings.holderId);
-    this.iframe = iframe = document.createElement('iframe');
-
+    
     var loaderSelf = this;
     var customerId = this.getCustomerId();
     if(customerId === undefined || customerId === null){
@@ -164,33 +163,22 @@
       throw this._errors.NotFoundHolderId;
     }
     this.el.style.width = this._settings.width;
-    
-    iframe.frameBorder = "0";
-    iframe.marginheight = "0";
-    iframe.width = "100%";
-    iframe.height = "100%";
-    iframe.scrolling = "no";
-    window.addEventListener('message',function(e){loaderSelf.handleSizingResponse.call(loaderSelf,e);} , false);
-    iframe.onload = function(){
-      iframe.contentWindow.postMessage('sizing?', loaderSelf.settings().get('protocol') + '://' + loaderSelf.settings().get('server'));
-    };
+    this.el.style.height = this._settings.height;
 
-    iframe.src = this.getApiUrl();
-    this.el.appendChild(iframe);
-    
-  };
-  proto.getRemoteUrl = function(){
-    return this.settings().get('protocol') + '://' + this.settings().get('server');
-  };
-  proto.handleSizingResponse = function(e){
-    if(e.origin == this.getRemoteUrl()) {
-      var action = e.data.split(':')[0];
-      if(action == 'sizing') {
-        console.log(e.data.split(':')[1]);
-        this.el.style.height = e.data.split(':')[1];
+    this.http({
+      method:'GET',
+      url:this.getApiUrl()
+    },function(err, data){
+      loaderSelf.el.innerHTML = JSON.parse(data.response).template;
+      var codes = loaderSelf.el.getElementsByTagName("script");   
+      for(var i=0;i<codes.length;i++){
+        var script = document.createElement("script");
+        script.innerHTML = codes[i].text;
+        document.head.appendChild(script);
       }
-    }
+    });
   };
+
   proto.tryToAutoInit = function(){
 
     var el = document.getElementById(this._settings.holderId);
