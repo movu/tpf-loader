@@ -20,6 +20,6 @@ describe("Url build", function() {
     MovuWidget.params().set('p1','v1');
     MovuWidget.params().set('p2','v2');
     MovuWidget.params().set('p3','v3');
-    expect(MovuWidget.getApiUrl().indexOf('?p1=v1&p2=v2&p3=v3')).not.toBe(-1);
+    expect(MovuWidget.getApiUrl().indexOf('?inquiry[p1]=v1&inquiry[p2]=v2&inquiry[p3]=v3')).not.toBe(-1);
   });
 });

@@ -1,5 +1,6 @@
 (function(window, document) {
   var MovuWidgetObj = function(){
+    this._protected = ['width', 'height', 'server', 'protocol', 'holderId'];
     this._settings = {
       width:'100%',
       height:'100%',
@@ -37,11 +38,18 @@
 
   proto.getApiUrl = function(){
     var q = '?';
-    for (var k in this._params){
-      if (['language','customerId'].indexOf(k) === -1) {
-        q += k + '=' + this._params[k] + '&';
+    for (var pk in this._params){
+      if (['language','customerId'].indexOf(pk) === -1) {
+        q += 'inquiry[' + pk + ']=' + this._params[pk] + '&';
       }
     }
+
+    for (var sk in this._settings){
+      if (this._protected.indexOf(sk) === -1) {
+        q += 'config[' + sk + ']=' + encodeURIComponent(this._settings[sk]) + '&';
+      }
+    }
+
     if(q.substr(-1) === '&'){
       q = q.substring(0, q.length - 1);
     }

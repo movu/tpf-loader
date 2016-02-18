@@ -8,20 +8,19 @@ app.get('/', function (req, res) {
   res.send('Hello World!');
 });
 app.use('/js',express.static('static'));
+
 app.get('/autoinit',function(req,res){
   res.send(swig.compileFile('autoinit.html')());
 });
 app.get('/jsinit',function(req,res){
   res.send(swig.compileFile('jsinit.html')());
 });
-app.get('/:lang/api/widget/:customerId',function(req,res){
-  var tpl = swig.compileFile('widget.html');
-  var jsOut = tpl({ article: { title: 'Swig is fun!' }});
-  res.json({"body": jsOut});
-});
-app.get('/js/movu-widget.js',function(req,res){
-  var tpl = swig.compileFile('movu-widget.js');
-  var jsOut = tpl({ article: { title: 'Swig is fun!' }});
+
+
+app.get('/tpf-loader.min.js',function(req,res){
+  var tpl = swig.compileFile('./static/movu-widget.js');
+  console.log(tpl);
+  var jsOut = tpl({});
   res.setHeader('content-type', 'text/javascript');
   res.send(jsOut);
 });

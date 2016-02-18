@@ -1,19 +1,43 @@
 <html>
 <head>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Movu</title>
+
 <!-- 
   <script type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/movu-production-s3/static/js/tpf-loader.min.js"></script>
 -->  
-  <script type="text/javascript" src="/js/movu-widget.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <script type="text/javascript" src="tpf-loader.min.js"></script>
 </head>
 <body>
   <!-- autoload init -->
-  <div id="movu-embedded-widget-holder" data-autoinit="false" ></div>
-  <script type="text/javascript">
-      MovuWidget.params().set('customerId','048346fd-2d4a-409f-b8f9-01326354b56e');
-      MovuWidget.settings().set('server','staging1.movu.ch');
-      MovuWidget.settings().set('protocol','https');
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <div id="movu-embedded-widget-holder" data-autoinit="false" ></div>
+        <script type="text/javascript">
+            MovuWidget.params().set('customerId','048346fd-2d4a-409f-b8f9-01326354b56e');
+            MovuWidget.settings().set('server','staging2.movu.ch');
+            MovuWidget.settings().set('protocol','https');
+            MovuWidget.params().set('language','de');
 
-      MovuWidget.init();
-  </script>
+
+            MovuWidget.init();
+        </script>
+    </div>
+  </div>
 </body>
 </html>

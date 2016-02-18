@@ -10,7 +10,7 @@
 <!-- 
   <script type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/movu-production-s3/static/js/tpf-loader.min.js"></script>
 -->  
-  <script type="text/javascript" src="/js/movu-widget.js"></script>    <!-- Bootstrap -->
+  <script type="text/javascript" src="tpf-loader.min.js"></script>    <!-- Bootstrap -->
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -49,12 +49,12 @@
     <script type="text/javascript">
       MovuWidget.settings().set('server','lvh.me:3000');
       MovuWidget.settings().set('protocol','http');
-//      MovuWidget.settings().set('server','staging1.movu.ch');
-  //    MovuWidget.settings().set('protocol','https');
+      //MovuWidget.settings().set('server','staging2.movu.ch');
 
-      MovuWidget.params().set('language','en');
-
-      MovuWidget.params().set('customerId','3f00908b-0cd0-4015-94e1-c82b56e921d6');
+      MovuWidget.params().set('language','de');
+ //diendeda locale       
+//      MovuWidget.params().set('customerId','1ca6d5e1-6c9c-4645-86c0-64fc0a8ad9d3');
+      MovuWidget.params().set('customerId','1');
 
 
       MovuWidget.params().set('is_moving_request',true);
@@ -63,12 +63,16 @@
       MovuWidget.params().set('client_postal_code','8006');
       MovuWidget.params().set('moving_street_and_number','Morgen strase 48');
       MovuWidget.params().set('moving_postal_code','8006');
-      MovuWidget.params().set('moving_date','2016-03-10');
+      MovuWidget.params().set('moving_date','2017-03-12');
       MovuWidget.params().set('cleaning_date','2016-03-12');
       MovuWidget.params().set('client_first_name','Sara');
       MovuWidget.params().set('client_last_name','Kalanj');
       MovuWidget.params().set('client_email','sara@movu.ch');
       MovuWidget.params().set('client_mobile','0791111111');
+      MovuWidget.params().set('client_salutation','mr');
+      MovuWidget.params().set('client_property_size','size_2');
+
+      //MovuWidget.settings().set('style','div{font-size:13px;font-weight:400;line-height: 1.5625;display:block;width:100%;height:54px;padding: 8px 10px;}');
       MovuWidget.init();
     </script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins)
