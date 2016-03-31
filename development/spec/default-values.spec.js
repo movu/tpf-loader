@@ -1,6 +1,6 @@
 describe("Def value tests", function() {
   it("host", function() {
-    expect(MovuWidget.settings().get('server')).toBe('movu.ch');
+    expect(MovuWidget.settings().get('server')).toBe('www.movu.ch');
   });
   it("protocol", function() {
     expect(MovuWidget.settings().get('protocol')).toBe('https');

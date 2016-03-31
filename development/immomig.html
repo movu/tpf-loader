@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Immomig test</title>
+    <script type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/movu-production-s3/static/js/tpf-loader.min.js"></script>
+  </head>
+  <body>
+    <div id="movu-embedded-widget-holder" data-autoinit="false" ></div>
+    <script type="text/javascript">
+      MovuWidget.settings().set('width','600px');
+      MovuWidget.params().set('customerId','3eb6f46b-76b8-4049-a380-7fd5d63ffa7d');
+      MovuWidget.params().set('language','fr');
+
+      // MovuWidget.params().set('is_moving_request',true);
+      // MovuWidget.params().set('is_cleaning_request',true);
+      MovuWidget.params().set('client_street_and_number','Universitätstrasse 63, Zürich');
+      MovuWidget.params().set('client_postal_code','8006');
+      MovuWidget.params().set('moving_street_and_number','Universitätstrasse 65, Zürich');
+      MovuWidget.params().set('moving_postal_code','8006');
+      MovuWidget.params().set('moving_date','2016-03-10');
+      MovuWidget.params().set('cleaning_date','2016-03-12');
+      MovuWidget.params().set('client_first_name','Sara');
+      MovuWidget.params().set('client_last_name','Froyd');
+      MovuWidget.params().set('client_email','sara@movu.ch');
+      // Available property sizes: size_1, size_2, size_3, size_4, size_5, size_6, size_7, size_8
+      MovuWidget.params().set('client_property_size', 'size_7');
+      MovuWidget.params().set('client_mobile','0791111111');
+      MovuWidget.init();
+    </script>
+  </body>
+</html>

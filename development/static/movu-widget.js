@@ -4,7 +4,7 @@
     this._settings = {
       width:'100%',
       height:'100%',
-      server:'movu.ch',
+      server:'www.movu.ch',
       protocol:'https',
       holderId: 'movu-embedded-widget-holder',
 
