@@ -164,6 +164,8 @@
     el.style.clear = "both"; 
     el.style.width = "100%";
     el.style.float = "left";
+    el.style.fontSize  = "85%";
+    el.style.opacity   = "0.7";
     el.style.textAlign = "right";
 
     el.innerHTML = "Copyright &copy; 2017 <a href='https://www.movu.ch/" + lang + "/' title='MOVU'>MOVU AG</a>";
