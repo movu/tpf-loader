@@ -157,6 +157,19 @@
     }
     return this._params.customerId;
   };
+  proto.getCopyright = function() {
+    var el = document.createElement('div');
+    var lang = this.params().get('language');
+
+    el.style.clear = "both"; 
+    el.style.width = "100%";
+    el.style.float = "left";
+    el.style.textAlign = "right";
+
+    el.innerHTML = "Copyright &copy; 2017 <a href='https://www.movu.ch/" + lang + "/' title='MOVU'>MOVU AG</a>";
+    return el;
+  };
+
   proto.init = function(){
     this.el = document.getElementById(this._settings.holderId);
     this.iframe = iframe = document.createElement('iframe');
@@ -185,6 +198,7 @@
 
     iframe.src = this.getApiUrl();
     this.el.appendChild(iframe);
+    this.el.appendChild(this.getCopyright());
     
   };
   proto.getRemoteUrl = function(){
