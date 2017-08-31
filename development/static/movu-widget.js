@@ -161,14 +161,14 @@
     var el = document.createElement('div');
     var lang = this.params().get('language');
 
-    el.style.clear = "both"; 
     el.style.width = "100%";
     el.style.float = "left";
-    el.style.fontSize  = "85%";
-    el.style.opacity   = "0.7";
+    el.style.fontSize  = "12px";
     el.style.textAlign = "right";
+    el.style.marginTop = "-5px";
 
-    el.innerHTML = "Copyright &copy; 2017 <a href='https://www.movu.ch/" + lang + "/' title='MOVU'>MOVU AG</a>";
+    el.classList.add("movu-copyrights");
+    el.innerHTML = "<span style='opacity: 0.7'>Copyright &copy; 2017 <a href='https://www.movu.ch/" + lang + "/' title='MOVU' style='color: #a7a8aa'>MOVU AG</a>&nbsp;&nbsp;</span>";
     return el;
   };
 
