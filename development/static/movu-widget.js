@@ -157,6 +157,21 @@
     }
     return this._params.customerId;
   };
+  proto.getCopyright = function() {
+    var el = document.createElement('div');
+    var lang = this.params().get('language');
+
+    el.style.width = "100%";
+    el.style.float = "left";
+    el.style.fontSize  = "12px";
+    el.style.textAlign = "right";
+    el.style.marginTop = "-25px";
+
+    el.classList.add("movu-copyrights");
+    el.innerHTML = "<span style='opacity: 0.7'>Copyright &copy; 2017 <a href='https://www.movu.ch/" + lang + "/' title='MOVU' style='color: #a7a8aa'>MOVU AG</a>&nbsp;&nbsp;</span>";
+    return el;
+  };
+
   proto.init = function(){
     this.el = document.getElementById(this._settings.holderId);
     this.iframe = iframe = document.createElement('iframe');
@@ -185,6 +200,7 @@
 
     iframe.src = this.getApiUrl();
     this.el.appendChild(iframe);
+    this.el.appendChild(this.getCopyright());
     
   };
   proto.getRemoteUrl = function(){
@@ -194,7 +210,6 @@
     if(e.origin == this.getRemoteUrl()) {
       var action = e.data.split(':')[0];
       if(action == 'sizing') {
-        console.log(e.data.split(':')[1]);
         this.el.style.height = e.data.split(':')[1];
       }
     }
