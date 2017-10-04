@@ -62,6 +62,11 @@ MovuWidget.params().set('client_last_name','Froyd');
 MovuWidget.params().set('client_email','sara@movu.ch');
 MovuWidget.params().set('client_mobile','0791111111');
 
+//Set utm params
+MovuWidget.params().set('utm_campaign','campaign_x');
+MovuWidget.params().set('utm_term','term_x');
+MovuWidget.params().set('utm_content','content_x');
+
 //At the end you have to init widget
 MovuWidget.init();
 ```
@@ -119,13 +124,3 @@ MovuWidget.init();
   </body>
 </html>
 ```    
-
-### Set partner tracking
-```html
-  <script type="text/javascript">
-    MovuWidget.params().set('utm_campaign','campaign_x');
-    MovuWidget.params().set('utm_term','term_x');
-    MovuWidget.params().set('utm_content','content_x');
-   </script>
-``` 
-
