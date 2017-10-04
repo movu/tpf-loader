@@ -120,3 +120,12 @@ MovuWidget.init();
 </html>
 ```    
 
+### Set partner tracking
+```html
+  <script type="text/javascript">
+    MovuWidget.params().set('utm_campaign','campaign_x');
+    MovuWidget.params().set('utm_term','term_x');
+    MovuWidget.params().set('utm_content','content_x');
+   </script>
+``` 
+
